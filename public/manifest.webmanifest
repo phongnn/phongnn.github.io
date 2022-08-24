@@ -1,7 +1,7 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": "Phong Nguyen's personal website",
+	"short_name": "Phong Nguyen",
+	"description": "Phong Nguyen's personal website",
 	"icons": [
 		{
 			"src": "images/icon/192x192.png",
