@@ -16,17 +16,20 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="mb-6 title">Hello World!</h1>
 		<p class="mb-4">
 			Hi, I’m a theme for Astro, an example of how you can use this starter to
 			create a personal blog. If you want to know more about how you can
 			customise me, add more posts, and make it your own, click on one of the
 			social links which will take you to my repo.
 		</p>
-		<SocialList />
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="mb-4 text-xl title">Posts</h2>
+	<section aria-label="Articles" class="mt-16">
+		<h2 class="mb-4 text-xl title" id="articles">Articles</h2>
+		<p class="mb-4">
+			Hi, I’m a theme for Astro, an example of how you can use this starter to
+			create a personal blog.
+		</p>
+
 		<!-- <ul class="space-y-4 sm:space-y-2">
 			{
 				// allPostsByDate.map((p) => (
@@ -37,8 +40,12 @@ const meta = {
 			}
 		</ul> -->
 	</section>
-	<section class="mt-16">
-		<h2 class="mb-4 text-xl title">Technologies</h2>
+	<section aria-label="Code" class="mt-16">
+		<h2 class="mb-4 text-xl title" id="code">Code</h2>
+		<p class="mb-4">
+			Hi, I’m a theme for Astro, an example of how you can use this starter to
+			create a personal blog.
+		</p>
 		<ul class="space-y-4 sm:space-y-2">
 			<li>
 				<a
@@ -85,5 +92,9 @@ const meta = {
 				<p class="inline-block sm:mt-2">Markdown for the component era.</p>
 			</li>
 		</ul>
+	</section>
+	<section aria-label="About" class="mt-16">
+		<h2 class="mb-4 text-xl title" id="about">About</h2>
+		<SocialList />
 	</section>
 </PageLayout>

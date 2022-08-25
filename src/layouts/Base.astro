@@ -8,10 +8,12 @@ import siteMeta from "src/site-meta.config";
 
 export type Props = {
 	meta: SiteMeta;
+	withNav?: boolean;
 };
 
 const {
 	meta: { title, description, image },
+	withNav = true,
 } = Astro.props as Props;
 ---
 
@@ -41,7 +43,7 @@ const {
 	</head>
 	<body>
 		<SkipLink />
-		<Header />
+		<Header withNav={withNav} />
 		<main id="main" class="flex-1">
 			<slot />
 		</main>
