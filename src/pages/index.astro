@@ -1,93 +1,29 @@
 ---
-import type { Post } from "@/types";
 import PageLayout from "@/layouts/Base";
-import BlogPostPreview from "@/components/BlogPostPreview";
-import SocialList from "@/components/SocialList";
+import Intro from "@/components/home/Intro";
+import Articles from "@/components/home/Articles";
+import Repositories from "@/components/home/Repositories";
+import About from "@/components/home/About";
 
 const meta = {
 	title: "Home",
 };
-const posts: Post[] = [
-	{
-		title: "Serverless at the edge: a quick overview",
-		description:
-			"Why and how to use edge computing platforms such as Cloudflare Workers and Deno?",
-		url: "https://hackernoon.com/serverless-at-the-edge-a-quick-overview",
-		publishDate: "2022-07-26",
-	},
-	{
-		title: "Remix framework review",
-		description: "Remix is cool but does it have any downsides?",
-		url: "https://hackernoon.com/remix-framework-review",
-		publishDate: "2022-07-15",
-	},
-	{
-		title: "Introduction to SolidJS for React developers",
-		description:
-			"What is SolidJS? Why should you use it? How is it different from React?",
-		url: "https://hackernoon.com/meet-solid-a-lightweight-javascript-ui-library-that-is-gaining-in-popularity",
-		publishDate: "2022-03-27",
-	},
-];
 ---
 
 <PageLayout meta={meta}>
 	<section>
-		<p class="mb-4">
-			Hi! I'm a software engineer who loves building web apps with React,
-			Next.js, Remix, TypeScript, Node.js, Cloudflare Workers...
-		</p>
+		<Intro />
 	</section>
 	<section aria-label="Articles" class="mt-16">
 		<h2 class="mb-4 text-xl title" id="articles">Articles</h2>
-		<p class="mb-5">
-			I write on <a
-				href="https://dev.to/phongnn"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="cactus-link inline-block"
-				>dev.to
-			</a> and have published several articles on <a
-				href="https://hackernoon.com/u/phongnn"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="cactus-link inline-block"
-				>hackernoon.com
-			</a>. Here are some of the more interesting ones:
-		</p>
-
-		<ul class="space-y-5">
-			{
-				posts.map((p) => (
-					<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
-						<BlogPostPreview post={p} as="h2" />
-					</li>
-				))
-			}
-		</ul>
+		<Articles />
 	</section>
 	<section aria-label="Code" class="mt-16">
 		<h2 class="mb-4 text-xl title" id="code">Code</h2>
-		<p class="mb-4">The following repositories demonstrate how I write code.</p>
-		<ul class="space-y-4 sm:space-y-2">
-			<li>
-				<a
-					href="https://astro.build"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-block cactus-link"
-					>Astro
-				</a>:
-				<p class="inline-block sm:mt-2">Build fast websites, faster.</p>
-			</li>
-		</ul>
+		<Repositories />
 	</section>
 	<section aria-label="About" class="mt-16">
 		<h2 class="mb-4 text-xl title" id="about">About</h2>
-		<p class="mb-40">
-			Hi! I'm a software engineer who loves building web apps with React,
-			Next.js, Remix, TypeScript, Node.js, Cloudflare Workers...
-		</p>
-		<SocialList />
+		<About />
 	</section>
 </PageLayout>

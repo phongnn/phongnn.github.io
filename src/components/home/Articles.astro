@@ -1,0 +1,53 @@
+---
+import type { Post } from "@/types";
+import BlogPostPreview from "./BlogPostPreview.astro";
+
+const posts: Post[] = [
+	{
+		title: "Serverless at the edge: a quick overview",
+		description:
+			"Why and how to use edge computing platforms such as Cloudflare Workers and Deno?",
+		url: "https://hackernoon.com/serverless-at-the-edge-a-quick-overview",
+		publishDate: "2022-07-26",
+	},
+	{
+		title: "Remix framework review",
+		description: "Remix is cool but does it have any downsides?",
+		url: "https://hackernoon.com/remix-framework-review",
+		publishDate: "2022-07-15",
+	},
+	{
+		title: "Introduction to SolidJS for React developers",
+		description:
+			"What is SolidJS? Why should you use it? How is it different from React?",
+		url: "https://hackernoon.com/meet-solid-a-lightweight-javascript-ui-library-that-is-gaining-in-popularity",
+		publishDate: "2022-03-27",
+	},
+];
+---
+
+<p class="mb-5">
+	I write on <a
+		href="https://dev.to/phongnn"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="cactus-link inline-block"
+		>dev.to
+	</a> and have published several articles on <a
+		href="https://hackernoon.com/u/phongnn"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="cactus-link inline-block"
+		>hackernoon.com
+	</a>. Here are some of the more interesting ones:
+</p>
+
+<ul class="space-y-5">
+	{
+		posts.map((p) => (
+			<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+				<BlogPostPreview post={p} as="h2" />
+			</li>
+		))
+	}
+</ul>
