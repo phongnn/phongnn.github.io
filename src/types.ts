@@ -1,4 +1,4 @@
-import type { MDXInstance, Page } from "astro";
+import type { Page } from "astro";
 
 type Theme = "light" | "dark";
 
@@ -12,25 +12,11 @@ type SiteMeta = {
 	image?: string;
 };
 
-type PaginationLink = {
-	url: string;
-	text?: string;
-	srLabel?: string;
-};
-
 interface Post {
 	title: string;
 	description: string;
-	publishDate?: Date;
-	tags?: string[];
+	url: string;
+	publishDate: string;
 }
 
-export type {
-	MDXInstance,
-	Page,
-	Theme,
-	IElement,
-	SiteMeta,
-	PaginationLink,
-	Post,
-};
+export type { Page, Theme, IElement, SiteMeta, Post };
