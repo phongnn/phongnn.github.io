@@ -15,9 +15,14 @@ const postDate = getLocaleTime(date, { month: "short" });
 ---
 
 <Element>
-	<a href={url} class="inline-block cactus-link line-clamp-1">
+	<a
+		href={url}
+		class="inline-block cactus-link line-clamp-1"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
 		{title}
 	</a>
 </Element>
 <q class="block italic line-clamp-3">{description}</q>
-<time {datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
+<time datetime={datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
