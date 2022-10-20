@@ -7,6 +7,10 @@ module.exports = {
 		aspectRatio: false,
 	},
 	theme: {
+		// prettier-ignore
+		fontFamily: {
+			sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+		},
 		extend: {
 			colors: {
 				bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
@@ -83,16 +87,10 @@ module.exports = {
 		plugin(function ({ addComponents }) {
 			addComponents({
 				".cactus-link": {
-					"@apply relative py-2 underline underline-offset-4 decoration-2 decoration-link sm:no-underline sm:py-0":
+					"@apply inline-block underline underline-offset-4 decoration-2 decoration-link":
 						{},
-					"@media (min-width: 640px)": {
-						"&:hover": {
-							"@apply sm:after:h-0.5 sm:after:bg-link": {},
-						},
-						"&::after": {
-							"@apply absolute bottom-0 inset-x-0 block content-[''] h-[1px] bg-textColor motion-safe:transition-height ease-in-out":
-								{},
-						},
+					"&:hover": {
+						"@apply decoration-textColor": {},
 					},
 				},
 				".title": {

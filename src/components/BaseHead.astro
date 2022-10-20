@@ -31,6 +31,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <link rel="manifest" href="/manifest.webmanifest" />
 <meta name="theme-color" content={siteMeta.themeColorLight} />
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+	rel="stylesheet"
+/>
+
 <!-- Open Graph / Facebook -->
 <meta property="og:locale" content={siteMeta.ogLocale} />
 <meta property="og:type" content="website" />
