@@ -13,17 +13,28 @@ const url = new URL(Astro.request.url);
 	import { toggleClass } from "@/util";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		// const { body } = document;
-		const toggleMenuButton = document.getElementById("toggle-navigation-menu");
 		let menuOpen = false;
+		const toggleMenuButton = document.getElementById("toggle-navigation-menu");
+		const navMenu = document.getElementById("navigation-menu");
+
 		const toggleMenu = () => {
 			menuOpen = !menuOpen;
 			toggleClass(document.body, "menu-open");
 			toggleClass(toggleMenuButton, "text-accent");
 			toggleMenuButton.setAttribute("aria-expanded", menuOpen.toString());
 		};
+
+		const handleMenuClick = (evt) => {
+			if (menuOpen && evt.target["tagName"] === "A") {
+				toggleMenu();
+			}
+		};
+
 		if (toggleMenuButton) {
 			toggleMenuButton.addEventListener("click", toggleMenu);
+		}
+		if (navMenu) {
+			navMenu.addEventListener("click", handleMenuClick);
 		}
 	});
 </script>
@@ -78,10 +89,6 @@ const url = new URL(Astro.request.url);
 
 		.logo {
 			@apply inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block;
-
-			/* svg {
-				@apply mr-3 h-10 w-6 sm:absolute sm:left-[-4.5rem] sm:mr-0 sm:h-20 sm:w-12;
-			} */
 
 			> span {
 				@apply text-xl font-bold sm:text-2xl;
