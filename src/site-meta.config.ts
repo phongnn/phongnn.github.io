@@ -1,5 +1,5 @@
 const siteMeta = {
-	title: "Phong Nguyen -  Software Developer",
+	title: "Phong Nguyen - Senior Software Engineer",
 	description: "Phong Nguyen's personal website",
 	lang: "en-GB",
 	ogLocale: "en_GB",
