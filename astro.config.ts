@@ -11,7 +11,7 @@ export default defineConfig({
 	// 		wrap: true,
 	// 	},
 	// },
-	site: "https://phongnn.github.io",
+	site: "https://phongnn.dev",
 	integrations: [
 		// mdx({}),
 		tailwind({
